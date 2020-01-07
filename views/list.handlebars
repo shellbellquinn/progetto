@@ -1,0 +1,40 @@
+
+<div class="jumbotron">
+	<div id="page-header">
+		<h1>Progetto</h1>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class='col-md-12'>
+			<form data-id="{{this.BoardId}}" class="submit-list">
+				<label>
+					<h2>Create A New List</h2>
+				</label>
+				<input type="input" id="list-name">
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+			{{#each list}}
+		<div class="col-md-2 text-center">
+			<h1>{{this.title}}</h1>
+			<form  class="submit-task" data-id="{{this.id}}">
+				<label>
+					<p>Add A Task</p>
+				</label>
+				<input type="input" id="task">
+				<br>
+				<br>
+				<button type="submit">Submit</button>
+			</form>
+				{{#each this.Tasks}}
+			<ul>
+				<li>{{this.body}}</li>
+			</ul>
+				{{/each}}
+		</div>
+			{{/each}}
+	</div>
+</div>
