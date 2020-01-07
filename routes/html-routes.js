@@ -1,29 +1,46 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
+var path = require('path');
+const db = require('../models');
 
-// Dependencies
-// =============================================================
-var path = require("path");
 
-// Routes
-// =============================================================
-module.exports = function(app) {
+module.exports = app=>{
+	app.get('/', (req, res)=>{
+		db.Board.findAll().then(dbBoard => {
+			let hbsObject = {
+				boards: dbBoard
+			}
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+			res.render('index', hbsObject);
+            // res.json(dbBoard);
+        });
+	});
 
-  // index route loads view.html
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
-  });
+	app.get('/boards', (req, res)=>{
+		db.Board.findAll().then(dbBoard => {
+			let hbsObject = {
+				boards: dbBoard
+			}
 
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
-  });
+			res.render('index', hbsObject);
+            // res.json(dbBoard);
+        });
+	});
 
-  // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
-  });
+	app.get('/board/:id', (req, res)=>{
+		let BoardId = req.params.id
+		// console.log(req.params.id)
+		db.List.findAll({
+			where: {
+				BoardId: BoardId
+			},
+			include: [db.Task]
+		}).then(dbList=>{
+			// console.log(dbList);
+			let hbsObject = {
+				list: dbList,
+				BoardId: BoardId
+			}
 
-};
+			res.render('list', hbsObject);
+		})
+	})
+}
