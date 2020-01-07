@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "MQmq123#",
-    "database": "trello",
-    "host": "127.0.0.1",
+    "use_env_variable": "mysql://hgq43jgrbsm0ufwk:a0bl58b7r0zu62an@blonze2d5mrbmcgf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jk5q7sbfiean7vnz",
     "dialect": "mysql"
   }
 }
