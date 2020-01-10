@@ -1,0 +1,13 @@
+language: node_js
+node_js: "8"
+services:
+  - mysql
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - node_modules
+    - config/config.json
+before_install:
+  - mysql -e 'CREATE DATABASE testdb;'
