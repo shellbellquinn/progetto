@@ -1,15 +1,45 @@
 
-<div class="jumbotron">
-	<div id="page-header">
-		<h1>Progetto</h1>
-	</div>
-</div>
+<section id="container">
+
+  <header class="header">
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips burger" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <!--logo start-->
+    <a href="/" class="logo"><b>PROGETTO</b></a>
+
+    <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+
+      </ul>
+    </div>
+  </header>
+  <!--header end-->
+
+  <!--sidebar start-->
+  <aside>
+    <div id="sidebar" class="nav-collapse">
+      <!-- sidebar menu start-->
+      <ul class="sidebar-menu">
+        <h4 class="centered">Welcome</h4>
+        <h4 class="centered"> {{user.firstname}}!</h4>
+        <li class="logout-wrapper">
+          <form id="logout" name="logout" method="get" action="/logout">
+            <button class="btn-lg mx-5" type="submit">
+              Logout
+            </button>
+          </form>
+        </li>
+    </div>
+  </aside>
+  <!--sidebar end-->
+  
 <div class="container">
 	<div class="row">
 		<div class='col-md-12'>
 			<form data-id="{{this.BoardId}}" class="submit-list">
 				<label>
-					<h2>Create A New List</h2>
+					<h2>Create A New List for {{Board.name}} </h2>
 				</label>
 				<input type="input" id="list-name">
 				<button type="submit">Submit</button>
@@ -37,4 +67,11 @@
 		</div>
 			{{/each}}
 	</div>
+
+			<div class="col-md-6 text-center">
+			<h1>{{user.firstname}}'s Boards</h1>
+				{{#each boards}}
+					<a href="/board/{{this.id}}"><h2>{{this.name}}</h2></a>
+				{{/each}}
+		</div>
 </div>

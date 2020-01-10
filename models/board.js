@@ -8,10 +8,21 @@ module.exports = (sequelize, DataTypes)=>{
 			}
 		} 
 	});
+
+	Board.associate = models=>{
+		Board.belongsTo(models.User, {
+			foreignKey: {
+				allowNull: false
+			}
+		})
+	}
+
 	Board.associate = models=>{
 		Board.hasMany(models.List, {
 			onDelete: 'cascade'
 		});
 	};
+
+
 	return Board;
 }

@@ -2,14 +2,14 @@
   "development": {
     "username": "root",
     "password": "mqMQ123#",
-    "database": "project2db",
+    "database": "progetto2_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "mqMQ123#",
-    "database": "project2bd",
+    "database": "progetto2_db",
     "host": "localhost",
     "dialect": "mysql"
   },
