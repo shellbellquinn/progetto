@@ -1,34 +1,98 @@
-<div class="limiter">
-  <div class="container-login100">
-    <div class="wrap-login100">
-      <form class="login100-form validate-form" id="signin" method="post" action="signin">
-        <span class="login100-form-title p-b-43">
-          User Login
-        </span>
+<style type="text/css">
+      /* login page style */
+        @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
+        body{
+        background: #36a494;
+        background: -webkit-linear-gradient(to right, #36a494, #71bfab);
+        background: linear-gradient(to right, #36a494, #71bfab);
+        font-family: 'Poppins', sans-serif;
+        }
+        .bg-custom{
+        background: #4ed4b4;
+        }
+        .bg-custom-form{
+        background: #333333;
+        }
+        h1{
+        top: 25%;
+        text-align: center;
+        position: relative;
+        font-size: 100px;
+        text-transform: uppercase;
+        line-height: 140px;
+        letter-spacing: 4px;
+        }
+        h1,p,label{
+        color: #fff;
+        }
+        label{
+        margin: 5px 0px;
+        }
+        .form-control{
+        outline: none;
+        border: none;
+        background: none;
+        border-bottom: 1px solid #fff;
+        border-radius: 0px !important;
+        }
+        .form-control:focus,.form-control:hover{
+        border:none;
+        margin: 0 auto;
+        background: none;
+        box-shadow: none;
+        border-bottom: 1px solid #4ed4b4;
+        }
+        .btn{
+        border-radius: 0px;
+        }
+        .btn-custom,.btn-custom:focus{
+        background: #4ed4b4;
+        border-color: #4ed4b4;
+        color: #fff;
+        box-shadow: none;
+        }
+        .btn-custom:hover{
+        background: #3aa696;
+        color: #fff;
+        }
+        @media(max-width:768px){
+        .none{
+        display: none;
+        }
+        }
+      </style>
 
-        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-          <input class="input100 text" type="text" name="email" />
-          <span class="focus-input100"></span>
-          <span class="label-input100">Email</span>
+<div class="container ">
+        <h2 class="text-center text-white p-3 pt-5"></h2>
+        <div class="row m-4">
+          <div class="col-md-6 col-sm-12 bg-custom none">
+            <h1 class="text-center pt-3">SIGN IN</h1>
+          </div>
+          <div class="col-md-6 col-sm-12 bg-custom-form">
+            <h2 class="text-center text-white mb-0 pt-5">PROGETTO</h2>
+            <p class="text-center">Your project management tool that is completely free and customizable to your daily routine.</p>
+        
+        <form id="signin" method="post" action="signin" class="p3">
+
+        <div class="form-group" data-validate="Valid email is required: ex@abc.xyz">
+          <input class="form-control input100 text" type="text" name="email" />
+          <lable for="email" class="text-center text-white p-2 pt-4">EMAIL</lable>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate="Password is required">
-          <input class="input100 password" type="password" name="password" />
-          <span class="focus-input100"></span>
-          <span class="label-input100">Password</span>
+        <div class="form-group" data-validate="Password is required">
+          <input class="form-control input100 password" type="password" name="password" />
+          <lable for="email" class="text-center text-white p-2 pt-4">PASSWORD</lable>
         </div>
-
-        <div class="flex-sb-m w-full p-t-3 p-b-32"></div>
 
         <div class="container-login100-form-btn">
-          <button class="login100-form-btn" type="submit">
-            Login
+          <button class="btn btn-custom mb-3 mt-3 login100-form-btn" type="submit">
+            SIGN IN
           </button>
-          Or sign up <a href="/signup">HERE</a>
         </div>
-      </form>
+         <p class="text-center mb-0 pt-5">Or sign up <a href="/signup">HERE</a></p>
 
-      <div class="login100-more" style="background-image: url('images/bg2.jpg');"></div>
-    </div>
-  </div>
-</div>
+      </form>
+          </div>
+        </div>
+      </div>
+    </body>
