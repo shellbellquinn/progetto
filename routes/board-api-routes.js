@@ -2,20 +2,21 @@ const db = require('../models');
 
 module.exports = app => {
 
-    app.get('/dashboard/boards', (req, res) => {
+    app.get('/api/boards', (req, res) => {
         db.Board.findAll().then(dbBoard => {
             res.json(dbBoard);
         })
     });
 
-    app.post('/dashboard/boards', (req, res) => {
-    	// console.log(req.body);
-        db.Board.create(req.body).then(dbBoard => {
+    app.post('/api/boards', (req, res) => {
+        const myPromise = db.Board.create(req.body)
+        
+        myPromise.then(dbBoard => {
             res.json(dbBoard);
         })
     });
 
-    app.put('/dashboard/boards/', (req, res) => {
+    app.put('/api/boards', (req, res) => {
         db.Board.update(req.body, {
             where: {
                 id: req.body.id
@@ -25,7 +26,7 @@ module.exports = app => {
         })
     });
 
-    app.delete('/dashboard/boards/:id', (req, res) => {
+    app.delete('/api/boards/:id', (req, res) => {
         db.Board.destroy(req.body, {
             where: {
                 id: req.params.id

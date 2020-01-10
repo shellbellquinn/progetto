@@ -3,7 +3,7 @@ const db = require('../models');
 
 
 module.exports = app=>{
-	app.get('/dashboard/boards', (req, res)=>{
+	app.get('/boards', (req, res)=>{
 		db.Board.findAll().then(dbBoard => {
 			let hbsObject = {
 				boards: dbBoard,
@@ -15,18 +15,7 @@ module.exports = app=>{
         });
 	});
 
-	app.get('dashboard/boards', (req, res)=>{
-		db.Board.findAll().then(dbBoard => {
-			let hbsObject = {
-				boards: dbBoard
-			}
-
-			res.render('dashboard', hbsObject);
-            // res.json(dbBoard);
-        });
-	});
-
-	app.get('dashboard/board/:id', (req, res)=>{
+	app.get('/board/:id', (req, res)=>{
 		let BoardId = req.params.id
 		// console.log(req.params.id)
 		db.List.findAll({
