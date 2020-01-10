@@ -1,7 +1,9 @@
 <section id="container">
 
   <header class="header">
-   
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips burger" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
     <!--logo start-->
     <a href="/" class="logo"><b>PROGETTO</b></a>
 
@@ -31,7 +33,11 @@
   </aside>
   <!--sidebar end-->
 
-
+<div class="jumbotron">
+	<div id="page-header">
+		<h1></h1>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
 		<div class='col-md-6'>
@@ -44,7 +50,7 @@
 			</form>
 		</div>
 		<div class="col-md-6 text-center">
-			<h1>{{user.firstname}}'s Boards</h1>
+			<h1>BOARDS</h1>
 				{{#each boards}}
 					<a href="/board/{{this.id}}"><h2>{{this.name}}</h2></a>
 				{{/each}}

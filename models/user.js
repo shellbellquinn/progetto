@@ -42,11 +42,5 @@ module.exports = function(sequelize, Sequelize) {
     }
   });
 
-  User.associate = models=>{
-		User.hasMany(models.Board, {
-			onDelete: 'cascade'
-		});
-	};
-
   return User;
 };
