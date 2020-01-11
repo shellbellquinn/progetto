@@ -1,5 +1,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 
+<style>
+  html, body {
+  height: 100%;
+  margin: 0;
+}
+.content {
+  min-height: 100%;
+}
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+.footer {
+  margin-top: -50px;
+  background: #ebfffc;
+  color: white;
+  line-height: 50px;
+  padding: 0 20px;
+}
+</style>
+
+
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <h1 class="is-size-1">  Welcome to Progetto, {{user.firstname}} </h1>
@@ -7,9 +29,15 @@
   <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-light" href="/">
+
+		  <a class="button is-light is-primary" href="/dashboard">
+            Back to Dashboard
+          </a>
+
+          <a class="button is-light is-primary" href="/">
             Log Out
           </a>
+
         </div>
       </div>
     </div>
@@ -17,42 +45,86 @@
   </div>
 </nav>
 
+<br>
+ <div class="content">
+    <div class="content-inside">
+
+<div class="container">
+ 
+
+<div class="control is-centered">
+
+	<form data-id="{{this.BoardId}}" class="submit-list">
+		<label class="label is-large">
+		Let's create a list for Board {{BoardId}}!
+		</label>
+		<input class="textarea is-large" placeholder="Start typing here to make a new board..." type="input" id="list-name">
+		<br>
+		<button class="button is-primary" type="submit" id="submit" >Submit</button>
+	</form>
+</div>
+
+</div>
+
+<br>
 
 
-			<form data-id="{{this.BoardId}}" class="submit-list">
-				<label>
-					<h2>Create A New List</h2>
-				</label>
-				<input type="input" id="list-name">
-				<button type="submit">Submit</button>
-			</form>
 
+<div class="container">
+<div class="notification">
 
-	
-			{{#each list}}
-		
-			<h1>{{this.title}}</h1>
-			<form  class="submit-task" data-id="{{this.id}}">
-				<label>
-					<p>Add A Task</p>
-				</label>
-				<input type="input" id="task">
-				<br>
-				<br>
-				<button type="submit">Submit</button>
-			</form>
-				{{#each this.Tasks}}
+<div class="columns is-multiline ">
+     {{#each list}} 
+  <div class="column is-half">
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      	{{this.title}} 
+    </p>
+    <button class="button is-primary is-light is-small is-right" type="edit">Edit</button> <br> <button class="button is-primary is-small is-right" type="delete">Delete</button>
+  </header>
+
+  	<div class="card-content">
+    <div class="content">
+     {{#each this.Tasks}} 
 			<ul>
-				{{this.body}}
+				<button class="button is-primary is-light is-small " type="delete">Delete</button>{{this.body}}
 			</ul>
 				{{/each}}
+    </div>
+  </div>
+
+  <footer class="card-footer">
+   	<form  class="submit-task" data-id="{{this.id}}">
 	
-			{{/each}}
+				
+				<input class="input is-primary" placeholder="Add a task..." type="input" id="task"> 
 
+				<button class="button is-primary is-light is-small" type="submit">Add Task</button>
+				
+	</form>
+			
+  </footer>
+</div>
 
+  </div>
+  {{/each}}
+</div>
 
-     {{#each boards}} 
- 
-    <p>{{this.name}}</a>
-    
+</div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+	<br>
+	<h3>Switch to your other boards</h3>
+    {{#each boards}} 
+    <a href="/board/{{this.id}}">&nbsp Board {{this.id}}-{{this.name}}</a>
  	 {{/each}}
+    </p>
+  </div>
+  <br>
+</footer>
