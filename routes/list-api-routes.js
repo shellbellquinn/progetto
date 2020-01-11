@@ -6,7 +6,8 @@ module.exports = app=>{
 		let BoardId = req.params.id
 		// console.log(req.params.id)
 		db.List.findAll({
-			include: [db.Task]
+			include: [db.Task],
+			include: [boards]
 		}).then(dbList=>{
 			res.json(dbList);
 		})

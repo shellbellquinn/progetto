@@ -2,8 +2,8 @@ var path = require('path');
 const db = require('../models');
 
 
-module.exports = app=>{
-	app.get('/boards', (req, res)=>{
+module.exports = app => {
+	app.get('/boards', (req, res) => {
 		db.Board.findAll().then(dbBoard => {
 			let hbsObject = {
 				boards: dbBoard,
@@ -11,11 +11,11 @@ module.exports = app=>{
 			}
 
 			res.render('dashboard', hbsObject);
-            // res.json(dbBoard);
-        });
+			// res.json(dbBoard);
+		});
 	});
 
-	app.get('/board/:id', (req, res)=>{
+	app.get('/board/:id', (req, res) => {
 		let BoardId = req.params.id
 		// console.log(req.params.id)
 		db.List.findAll({
@@ -23,17 +23,21 @@ module.exports = app=>{
 				BoardId: BoardId
 			},
 			include: [db.Task],
-			// include: [db.Board] FIGURE OUT HOW TO GET THE BOARD INFO INTO THIS ROUTE
-		}).then(dbList=>{
-			// console.log(dbList);
-			let hbsObject = {
-				list: dbList,
-				BoardId: BoardId,
-				// board: req.board, THIS IS NOT WORKING EITHER
-				user: req.user
-			}
+		}).then(dbList => {
+			
+			 db.Board.findAll().then(dbBoard => {
+				let hbsObject = {
+					list: dbList,
+					BoardId: BoardId,
+					user: req.user,
+					boards: dbBoard
+				}
+				console.log(hbsObject)
 
-			res.render('list', hbsObject);
+				res.render('list', hbsObject);
+				
+			 });
 		})
+
 	})
 }
