@@ -1,61 +1,71 @@
-<section id="container">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 
-  <header class="header">
-    <div class="sidebar-toggle-box">
-      <div class="fa fa-bars tooltips burger" data-placement="right" data-original-title="Toggle Navigation"></div>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <h1 class="is-size-1">  Welcome to Progetto, {{user.firstname}} </h1>
+  </div>
+  <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light" href="/">
+            Log Out
+          </a>
+        </div>
+      </div>
     </div>
-    <!--logo start-->
-    <a href="/" class="logo"><b>PROGETTO</b></a>
 
-    <div class="top-menu">
-      <ul class="nav pull-right top-menu">
+  </div>
+</nav>
 
-      </ul>
-    </div>
-  </header>
-  <!--header end-->
-
-  <!--sidebar start-->
-  <aside>
-    <div id="sidebar" class="nav-collapse">
-      <!-- sidebar menu start-->
-      <ul class="sidebar-menu">
-        <h4 class="centered">Welcome</h4>
-        <h4 class="centered"> {{user.firstname}}!</h4>
-        <li class="logout-wrapper">
-          <form id="logout" name="logout" method="get" action="/logout">
-            <button class="btn-lg mx-5" type="submit">
-              Logout
-            </button>
-          </form>
-        </li>
-    </div>
-  </aside>
-  <!--sidebar end-->
-
-<div class="jumbotron">
-	<div id="page-header">
-		<h1></h1>
-	</div>
-</div>
+<br>
+ 
 <div class="container">
-	<div class="row">
-		<div class='col-md-6'>
+ 
+
+<div class="control is-centered">
+
 			<form>
-				<label>
-					<h2>Create A Board</h2>
+				<label class="label is-large">
+				Let's Get Started!
 				</label>
-				<input type="input" id="board-name">
-				<button type="submit" id="submit-board">Submit</button>
+				<input class="textarea is-large" placeholder="Start typing here to make a new board..." type="input" id="board-name">
+				<button class="button is-primary" type="submit" id="submit-board" >Submit</button>
 			</form>
-		</div>
-		<div class="col-md-6 text-center">
-			<h1>BOARDS</h1>
-				{{#each boards}}
-					<a href="/board/{{this.id}}"><h2>{{this.name}}</h2></a>
-				{{/each}}
-		</div>
-	</div>
 </div>
 
-  <!--main content start-->
+</div>
+
+<br>
+
+
+<div class="container">
+<div class="notification">
+
+<div class="columns is-multiline ">
+     {{#each boards}} 
+  <div class="column is-one-quarter">
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      	<a href="/board/{{this.id}}">{{this.name}}</a>
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <footer class="card-footer">
+    <a href="/board/{{this.id}}" class="card-footer-item">Add Tasks</a>
+    <a href="#" class="card-footer-item" id="edit-board">Edit Name</a>
+    <a href="#" class="card-footer-item" id="delete-board">Delete Board</a>
+  </footer>
+</div>
+
+  </div>
+  {{/each}}
+</div>
+
+</div>
+</div>
