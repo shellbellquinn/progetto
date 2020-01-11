@@ -17,6 +17,16 @@ exports.dashboard = (req, res)=> {
     });
   })
 };
+exports.list = (req, res)=> {
+  const boardPromise = db.Board.findAll();
+
+  boardPromise.then((dbBoards) => {
+    res.render("dashboard", { 
+      user: req.user,
+      boards: dbBoards
+    });
+  })
+};
 exports.logout = (req, res)=> {
   req.session.destroy(function(err) {
     res.redirect("/");

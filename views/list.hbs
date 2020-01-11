@@ -1,12 +1,24 @@
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 
-<div class="jumbotron">
-	<div id="page-header">
-		<h1>Progetto</h1>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class='col-md-12'>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <h1 class="is-size-1">  Welcome to Progetto, {{user.firstname}} </h1>
+  </div>
+  <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light" href="/">
+            Log Out
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
 			<form data-id="{{this.BoardId}}" class="submit-list">
 				<label>
 					<h2>Create A New List</h2>
@@ -14,11 +26,11 @@
 				<input type="input" id="list-name">
 				<button type="submit">Submit</button>
 			</form>
-		</div>
-	</div>
-	<div class="row">
+
+
+	
 			{{#each list}}
-		<div class="col-md-2 text-center">
+		
 			<h1>{{this.title}}</h1>
 			<form  class="submit-task" data-id="{{this.id}}">
 				<label>
@@ -31,10 +43,16 @@
 			</form>
 				{{#each this.Tasks}}
 			<ul>
-				<li>{{this.body}}</li>
+				{{this.body}}
 			</ul>
 				{{/each}}
-		</div>
+	
 			{{/each}}
-	</div>
-</div>
+
+
+
+     {{#each boards}} 
+ 
+    <p>{{this.name}}</a>
+    
+ 	 {{/each}}

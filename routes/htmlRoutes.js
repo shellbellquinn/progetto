@@ -22,12 +22,15 @@ module.exports = app=>{
 			where: {
 				BoardId: BoardId
 			},
-			include: [db.Task]
+			include: [db.Task],
+			// include: [db.Board] FIGURE OUT HOW TO GET THE BOARD INFO INTO THIS ROUTE
 		}).then(dbList=>{
 			// console.log(dbList);
 			let hbsObject = {
 				list: dbList,
-				BoardId: BoardId
+				BoardId: BoardId,
+				// board: req.board, THIS IS NOT WORKING EITHER
+				user: req.user
 			}
 
 			res.render('list', hbsObject);
