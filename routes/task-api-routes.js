@@ -1,6 +1,6 @@
 const db = require('../models');
 
-module.exports = app=>{
+module.exports = app => {
 
 	app.get('/api/tasks', (req, res) => {
 		db.Task.findAll().then(dbList => {
@@ -26,11 +26,10 @@ module.exports = app=>{
 	});
 
 	app.delete('/api/tasks/:id', (req, res) => {
-		db.Task.destroy(req.body, {
+		db.Task.destroy({
 			where: {
 				id: req.params.id
 			}
-		});
+		}).then(task => res.json(task));
 	});
-
 }

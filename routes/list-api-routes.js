@@ -30,11 +30,11 @@ module.exports = app=>{
 	});
 
 	app.delete('/api/lists/:id', (req, res) => {
-		db.List.destroy(req.body, {
+		db.List.destroy({
 			where: {
 				id: req.params.id
 			}
-		});
+		}).then((list) => res.json(list));
 	});
 
 }

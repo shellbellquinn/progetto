@@ -82,14 +82,14 @@
     <p class="card-header-title">
       	{{this.title}} 
     </p>
-    <button class="button is-primary is-light is-small is-right" type="edit">Edit</button> <br> <button class="button is-primary is-small is-right" type="delete">Delete</button>
+    <button class="button is-primary is-light is-small is-right" type="edit">Edit</button> <br> <button id="delete-list" data-id="{{this.id}}" class="button is-primary is-small is-right" type="delete">Delete</button>
   </header>
 
   	<div class="card-content">
     <div class="content">
      {{#each this.Tasks}} 
 			<ul>
-				<button class="button is-primary is-light is-small " type="delete">Delete</button>{{this.body}}
+				<button class="button is-primary is-light is-small " type="delete" id="delete-task" data-id="{{this.id}}">Delete</button>{{this.body}}
 			</ul>
 				{{/each}}
     </div>

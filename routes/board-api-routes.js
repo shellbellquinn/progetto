@@ -10,7 +10,7 @@ module.exports = app => {
 
     app.post('/api/boards', (req, res) => {
         const myPromise = db.Board.create(req.body)
-
+        
         myPromise.then(dbBoard => {
             res.json(dbBoard);
         })
@@ -27,13 +27,8 @@ module.exports = app => {
     });
 
     app.delete('/api/boards/:id', (req, res) => {
-        console.log(req)
-        const boardID = req.params.id;
-        console.log("I'm gonna delete this board: " + boardID)
         db.Board.destroy({
-            where: {
-                id: boardID
-            }
+            where: { id: req.params.id }
         }).then(dbBoard => {
             res.json(dbBoard);
         })
