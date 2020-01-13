@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<title>Trello</title>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/main.css">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Drag n Drop</title>
+
+	<link rel="stylesheet" href="main.css" />
 </head>
 <body>
-	<header class="container-fluid">
-    </header>
-	<div id="bigBox">
-		<div class="box">
-			<span id="span" class="add">Add a List...</span>
-			<form id="form" class=" dNone">
-				<input placeholder="Add a list" type="text" id="input" class="input"><br>
-				<button id="btnGreen" class="btnGreen">Save</button>
-			</form>
+	<div class="app">
+		<header>
+			<h1>DRAG n DROP</h1>
+		</header>
+		<div class="lists">
+			<div class="list">
+				<div class="list-item" draggable="true">List item 1</div>
+				<div class="list-item" draggable="true">List item 2</div>
+				<div class="list-item" draggable="true">List item 3</div>
+			</div>
+			<div class="list"></div>
+			<div class="list"></div>
 		</div>
 	</div>
-	
-	<script type="text/javascript" src="js/app.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>
