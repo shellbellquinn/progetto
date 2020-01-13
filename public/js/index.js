@@ -47,4 +47,20 @@ $(() => {
 		});
 	});
 
+	$('#delete-board').on('click', (event) => {
+		event.preventDefault();
+		const boardId = $("#delete-board").data('id')
+		console.log("Deleting board with id: " + boardId)
+
+		$.ajax({
+			url: '/api/boards/' + boardId,
+			type: 'DELETE',
+			success: () => {
+				console.log("Board deleted!")
+				let url = window.location.href;
+				window.location.assign(url);
+			}
+		})
+	})
+
 });

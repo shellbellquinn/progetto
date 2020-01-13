@@ -9,7 +9,7 @@
   "test": {
     "username": "root",
     "password": "mqMQ123#",
-    "database": "project2bd",
+    "database": "project2db",
     "host": "localhost",
     "dialect": "mysql"
   },
