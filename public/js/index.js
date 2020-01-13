@@ -17,9 +17,9 @@ $(() => {
 	});
 
 
-	$('#delete-board').on('click', (event) => {
+	$('.delete-board').on('click', (event) => {
 		event.preventDefault();
-		const boardId = $("#delete-board").data('id')
+		const boardId = $(".delete-board").data('id')
 		console.log("Deleting board with id: " + boardId)
 
 		$.ajax({
