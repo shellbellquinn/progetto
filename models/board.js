@@ -6,7 +6,11 @@ module.exports = (sequelize, DataTypes)=>{
 			validate: {
 				len: [1, 50]
 			}
-		} 
+		},
+		createdBy: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		}
 	});
 	Board.associate = models=>{
 		Board.hasMany(models.List, {

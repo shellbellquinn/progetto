@@ -24,18 +24,27 @@ module.exports = app => {
 			},
 			include: [db.Task],
 		}).then(dbList => {
-			
-			 db.Board.findAll().then(dbBoard => {
+			 db.Board.findAll().then(dbBoards => {
+				 console.log(req.user)
+				 console.log(dbBoards)
+				const userBoards = dbBoards.filter((board) => board.dataValues.createdBy == req.user.id)
+				const currentBoard = userBoards.filter((board) => board.dataValues.id == BoardId)[0]
+
+				console.log("UserBoards: " + userBoards.length)
+				console.log(userBoards)
+				console.log("My Current Board")
+				console.log(currentBoard)
+
 				let hbsObject = {
 					list: dbList,
 					BoardId: BoardId,
+					BoardName: currentBoard.dataValues.name,
 					user: req.user,
-					boards: dbBoard
+					boards: userBoards
 				}
-				console.log(hbsObject)
 
 				res.render('list', hbsObject);
-				
+
 			 });
 		})
 

@@ -9,7 +9,10 @@ module.exports = app => {
     });
 
     app.post('/api/boards', (req, res) => {
-        const myPromise = db.Board.create(req.body)
+        const myPromise = db.Board.create({
+            name: req.body.name,
+            createdBy: JSON.stringify(req.user.id)
+        })
         
         myPromise.then(dbBoard => {
             res.json(dbBoard);

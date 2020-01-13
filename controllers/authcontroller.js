@@ -8,7 +8,9 @@ exports.signin = (req, res)=> {
   res.render("signin");
 };
 exports.dashboard = (req, res)=> {
-  const boardPromise = db.Board.findAll();
+  console.log("Logging in")
+  console.log(req.user)
+  const boardPromise = db.Board.findAll({ where: { createdBy: req.user.id } });
 
   boardPromise.then((dbBoards) => {
     res.render("dashboard", { 
