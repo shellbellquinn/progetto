@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	background-color: #0079BF;
+}
+header{
+    width: 100%;   
+    background-image: url(../image/trello.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 10%;
+    position: fixed;
+    background-color: #0067A3;
+    height: 4em;
+    padding: 0.4em;
+}
+
+/*-- CSS PARA SCROLLBSAR--*/
+::-webkit-scrollbar-track {
+    border-radius: 1em;
+}
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(169, 166, 166);
+    border-radius: 1em;
+}
+/*----*/
+.dNone {
+	display: none;
+}
+.dBlock {
+	display: block;
+}
+.dInlineBlock {
+	display: inline-block;
+}
+/*******************************/
+#bigBox {
+	white-space: nowrap;
+	vertical-align: top;
+	padding-top: 5em;
+}
+.box {
+	background-color: #E2E4E6;
+	border-radius: 8px;
+	margin: 0 5px;
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+}
+.add{
+	display: inline-block;
+	background-color: #006BA9;
+	border-radius: 4px;
+    cursor: pointer;
+    color: rgba(225, 225, 225, 0.7);
+    width: 250px;
+    padding: 10px;
+    text-align: left;
+}
+.add:hover{
+	background-color: #03527F;
+	color: rgba(225, 225, 225, 0.7);
+}
+.form {
+	background-color: #E2E4E6;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 6px;
+	width: 250px;
+}
+.input {
+	width: 100%;
+	padding: 3px;
+	display: inherit;
+	overflow: hidden;
+}
+.btnGreen {
+	background-color: #61BD4F;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    padding: 3% 6%;
+    margin-top: 3%;
+}
+.btnGreen:hover {
+	background-color: #01DF01;
+	color: #fff;
+}
+.list-header {
+	border-radius: 3px 3px 0 0;
+	background-color: #E2E4E6;
+	font-weight: bold;
+	padding: 8px 10px;
+	width: 250px;
+	word-wrap: break-word;
+}
+.link {
+	background-color: #E2E4E6;
+	border-radius: 0 0 3px 3px;
+    color: #8C8C8C;
+    display: block;
+    padding: 8px 10px;
+    cursor: pointer;
+    width: 250px;
+}
+.link:hover{
+	background-color: #D8D8D8;
+	color: #A4A4A4;
+}
+.enter {
+	background-color: #fff;
+	border-radius: 5px;
+    padding: 6px;
+    margin: 5px;
+    word-wrap: break-word;
+}
+.edge {
+	border: 2px dashed  #A4A4A4;
+}
+
