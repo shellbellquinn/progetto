@@ -48,9 +48,9 @@ $(() => {
 		});
 	});
 
-	$('#delete-list').on('click', (event) => {
+	$('.delete-list').on('click', (event) => {
 		event.preventDefault();
-		const listId = $("#delete-list").data('id')
+		const listId = $(".delete-list").data('id')
 		console.log("Deleting list with id: " + listId)
 
 		$.ajax({
@@ -80,9 +80,9 @@ $(() => {
 		});
 	});
 
-	$('#delete-task').on('click', (event) => {
+	$('.delete-task').on('click', (event) => {
 		event.preventDefault();
-		const taskId = $("#delete-task").data('id')
+		const taskId = $(".delete-task").data('id')
 		console.log("Deleting task with id: " + taskId)
 
 		$.ajax({
