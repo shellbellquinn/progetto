@@ -10,17 +10,13 @@
 
 # Technologies Used
 
-# APIs and frameworks 
-Passport, Jquery, Handlebars, MySQL, Express
+APIs used - Passport js for authentication/session retension. 
+DB - MySQL database and an ORM (Sequelize)
+HTML and CSS for Frontend - bootstrap, bulma
+Server - Node and Express server
+Front end - express handlebars
+Deployed on Heroku
 
-# Langauges 
- HTML, CSS, Javascript, Node, Express
-
-# Central Configuration repositories 
-JSON, Bcrypt
-
-# Presentation Link -
-https://docs.google.com/presentation/d/1y_P6N1xtFVfeEdrD-gJhyIG1QL-9ZgHx7mK5vDXzbnY/edit#slide=id.p
 
 # Deployed at - 
 http://progetto-2.herokuapp.com/
