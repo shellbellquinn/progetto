@@ -10,12 +10,12 @@
 
 # Technologies Used
 
-APIs used - Passport js for authentication/session retension. 
-DB - MySQL database and an ORM (Sequelize)
-HTML and CSS for Frontend - bootstrap, bulma
-Server - Node and Express server
-Front end - express handlebars
-Deployed on Heroku
+<p>APIs used - Passport js for authentication/session retension. </p>
+<p>DB - MySQL database and an ORM (Sequelize) </p>
+<p>HTML and CSS for Frontend - bootstrap, bulma </p>
+<p>Server - Node and Express server </p>
+<p>Front end - express handlebars </p>
+<p>Deployed on Heroku </p>
 
 
 # Deployed at - 
